@@ -32,100 +32,7 @@
 							}),
 							(a.genetate_css = function () {
 								return (
-									`/* Created by https://notogawa.github.io/discord-overlay-among_us/ */
-body {
-  background-color: rgba(0, 0, 0, 0);
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  float: right;
-}
-
-ul[class$='voice_states'] {
-  margin: 0;
-  padding: 0;
-}
-
-li[class$='voice_state'] img[class$='avatar'] {
-  border: 0 !important;
-  height: 100px !important;
-  width: 100px !important;
-  border-radius: 0 !important;
-}
-
-li[class$='voice_state'] div[class$='username'] {
-  width: 100px !important;
-  position: relative;
-  overflow: visible;
-  top: -26px;
-  display: inline-block;
-}
-
-
-li[class$='voice_state'][class*='speaking'] div[class$='username'] {
-  background: #41DAC6 !important;
-}
-
-li[class$='voice_state'] div[class$='username']:before {
-  position: absolute;
-  top: -80px;
-  left: -50px;
-  z-index: -1;
-  content: "";
-  display: block;
-  width: 90px;
-  height: 115px;
-  background-image: url(https://argo20k.github.io/notogawa-discord_overlay-among_us-fork/players.png);
-  background-size: 1620px auto;
-  transform: scale(-0.75, 0.75) rotate(30deg);
-}
-
-li[class$='voice_state'] div[class$='username']:before {
-  transition: all 0.05s 0s ease-in-out;
-  /* Animation (commented out) */
-  /* animation: mozomozo 2s ease 0.1s infinite alternate none running; */
-}
-
-li[class$='voice_state'][class*='speaking'] div[class$='username']:before {
-  z-index: 1;
-  transform: translateX(-35px) scale(-1, 1);
-  animation: pyonpyon 0.5s ease 0.1s infinite alternate none running;
-}
-
-li[class$='voice_state'] {
-  height: 100px !important;
-  width: 100px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: none;
-  padding: 20px 0 0 90px;
-  position: relative;
-}
-
-@keyframes pyonpyon {
-  0% {
-    transform: translateX(-35px) scale(-1, 1);
-  }
-  50% {
-    transform: translateX(-35px) scale(-1.1, 0.85);
-  }
-  100% {
-    transform: translateX(-35px) scale(-1, 1);
-  }
-}
-
-@keyframes mozomozo {
-  0% {
-    transform: scale(-0.75, 0.75) rotate(30deg);
-  }
-  80% {
-    transform: scale(-0.75, 0.75) rotate(15deg);
-  }
-  100% {
-    transform: scale(-0.75, 0.75) rotate(30deg);
-  }
-}
-` +
+									'/* Created by https://notogawa.github.io/discord-overlay-among_us/ */\nbody {\n  background-color: rgba(0, 0, 0, 0);\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  float: right;\n}\n\n.voice-states {\n  margin: 0;\n  padding: 0;\n}\n\n.avatar {\n  border: 0 !important;\n  height: 100px !important;\n  width: 100px !important;\n  border-radius: 0 !important;\n}\n\n.user .name {\n  width: 100px !important;\n  position: relative;\n  overflow: visible;\n  top: -26px;\n  display: inline-block;\n}\n\n.avatar.speaking + .user .name {\n  background: #41DAC6 !important;\n}\n\n.user .name::before {\n  position: absolute;\n  top: -80px;\n  left: -50px;\n  z-index: -1;\n  content: "";\n  display: block;\n  width: 90px;\n  height: 115px;\n  background-image: url(https://argo20k.github.io/notogawa-discord_overlay-among_us-fork/players.png);\n  background-size: 1620px auto;\n  transform: scale(-0.75, 0.75) rotate(30deg);\n}\n\n.avatar + .user .name::before {\n  transition: all 0.05s 0s ease-in-out;\n/*  animation: mozomozo 2s ease 0.1s infinite alternate none running; */\n}\n\n.avatar.speaking + .user .name::before {\n  z-index: 1;\n  transform: translateX(-35px) scale(-1, 1);\n  animation: pyonpyon 0.5s ease 0.1s infinite alternate none running;\n}\n\nli.voice-state {\n  height: 100px !important;\n  width: 100px !important;\n  margin: 0 !important;\n  padding: 0 !important;\n  display: none;\n  padding: 20px 0 0 90px;\n  position: relative;\n}\n\n@keyframes pyonpyon {\n  0% {\n    transform: translateX(-35px) scale(-1, 1);\n  }\n  50% {\n    transform: translateX(-35px) scale(-1.1, 0.85);\n  }\n  100% {\n    transform: translateX(-35px) scale(-1, 1);\n  }\n}\n\n@keyframes mozomozo {\n  0% {\n    transform: scale(-0.75, 0.75) rotate(30deg);\n  }\n  80% {\n    transform: scale(-0.75, 0.75) rotate(15deg);\n  }\n  100% {\n    transform: scale(-0.75, 0.75) rotate(30deg);\n  }\n}\n' +
 									j
 										.map(function (n, e) {
 											return '' === a.state[n]
@@ -169,7 +76,7 @@ li[class$='voice_state'] {
 															{
 																className: e(t),
 																children: [
-																	Object(h.jsx)('div', { className: 'chara', children: Object(h.jsx)('img', { alt: ''.concat(t, ' player'), src: ''.concat('/notogawa-discord_overlay-among_us-forkz', '/players.png') }) }),
+																	Object(h.jsx)('div', { className: 'chara', children: Object(h.jsx)('img', { alt: ''.concat(t, ' player'), src: ''.concat('/notogawa-discord_overlay-among_us-fork', '/players.png') }) }),
 																	Object(h.jsxs)('div', { className: 'form', children: [t, ' ', Object(h.jsx)('br', {}), Object(h.jsx)('input', { type: 'text', name: t, onChange: n.handleChange, value: n.state[t] })] }),
 																],
 															},
