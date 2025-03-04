@@ -32,18 +32,37 @@
 							}),
 							(a.genetate_css = function () {
 								return (
-									'/* Created by https://notogawa.github.io/discord-overlay-among_us/ */\nbody {\n  background-color: rgba(0, 0, 0, 0);\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  float: right;\n}\n\n.voice-states {\n  margin: 0;\n  padding: 0;\n}\n\n.avatar {\n  border: 0 !important;\n  height: 100px !important;\n  width: 100px !important;\n  border-radius: 0 !important;\n}\n\n.user .name {\n  width: 100px !important;\n  position: relative;\n  overflow: visible;\n  top: -26px;\n  display: inline-block;\n}\n\n.avatar.speaking + .user .name {\n  background: #41DAC6 !important;\n}\n\n.user .name::before {\n  position: absolute;\n  top: -80px;\n  left: -50px;\n  z-index: -1;\n  content: "";\n  display: block;\n  width: 90px;\n  height: 115px;\n  background-image: url(https://argo20k.github.io/notogawa-discord_overlay-among_us-fork/players.png);\n  background-size: 1620px auto;\n  transform: scale(-0.75, 0.75) rotate(30deg);\n}\n\n.avatar + .user .name::before {\n  transition: all 0.05s 0s ease-in-out;\n/*  animation: mozomozo 2s ease 0.1s infinite alternate none running; */\n}\n\n.avatar.speaking + .user .name::before {\n  z-index: 1;\n  transform: translateX(-35px) scale(-1, 1);\n  animation: pyonpyon 0.5s ease 0.1s infinite alternate none running;\n}\n\nli.voice-state {\n  height: 100px !important;\n  width: 100px !important;\n  margin: 0 !important;\n  padding: 0 !important;\n  display: none;\n  padding: 20px 0 0 90px;\n  position: relative;\n}\n\n@keyframes pyonpyon {\n  0% {\n    transform: translateX(-35px) scale(-1, 1);\n  }\n  50% {\n    transform: translateX(-35px) scale(-1.1, 0.85);\n  }\n  100% {\n    transform: translateX(-35px) scale(-1, 1);\n  }\n}\n\n@keyframes mozomozo {\n  0% {\n    transform: scale(-0.75, 0.75) rotate(30deg);\n  }\n  80% {\n    transform: scale(-0.75, 0.75) rotate(15deg);\n  }\n  100% {\n    transform: scale(-0.75, 0.75) rotate(30deg);\n  }\n}\n' +
+									'/* Created by https://notogawa.github.io/discord-overlay-among_us/ */\nbody {\n  background-color: rgba(0, 0, 0, 0);\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  float: right;\n}\n\n' +
+									'ul[class$="voice_states"] {\n  margin: 0;\n  padding: 0;\n}\n\n' +
+									'li[class$="voice_state"] img[class$="avatar"] {\n  border: 0 !important;\n  height: 100px !important;\n  width: 100px !important;\n  border-radius: 0 !important;\n}\n\n' +
+									'li[class$="voice_state"] span[class*="name"] {\n  width: 100px !important;\n  position: relative;\n  overflow: visible;\n  top: -26px;\n  display: inline-block;\n}\n\n' +
+									'li[class$="voice_state"][class*="speaking"] span[class*="name"] {\n  background: #41DAC6 !important;\n}\n\n' +
+									'li[class$="voice_state"] span[class*="name"]:before {\n  position: absolute;\n  top: -80px;\n  left: -50px;\n  z-index: -1;\n  content: "";\n  display: block;\n  width: 90px;\n  height: 115px;\n  background-image: url(https://i.imgur.com/6kxQbIF.png);\n  background-size: 1620px auto;\n  transform: scale(-0.75, 0.75) rotate(30deg);\n}\n\n' +
+									'li[class$="voice_state"] span[class*="name"]:before {\n  transition: all 0.05s 0s ease-in-out;\n}\n\n' +
+									'li[class$="voice_state"][class*="speaking"] span[class*="name"]:before {\n  z-index: 1;\n  transform: translateX(-35px) scale(-1, 1);\n  animation: pyonpyon 0.5s ease 0.1s infinite alternate none running;\n}\n\n' +
+									'li[class$="voice_state"] {\n  height: 100px !important;\n  width: 100px !important;\n  margin: 0 !important;\n  padding: 0 !important;\n  display: none;\n  padding: 20px 0 0 90px;\n  position: relative;\n}\n\n' +
+									'@keyframes pyonpyon {\n  0% {\n    transform: translateX(-35px) scale(-1, 1);\n  }\n  50% {\n    transform: translateX(-35px) scale(-1.1, 0.85);\n  }\n  100% {\n    transform: translateX(-35px) scale(-1, 1);\n  }\n}\n\n' +
+									'@keyframes mozomozo {\n  0% {\n    transform: scale(-0.75, 0.75) rotate(30deg);\n  }\n  80% {\n    transform: scale(-0.75, 0.75) rotate(15deg);\n  }\n  100% {\n    transform: scale(-0.75, 0.75) rotate(30deg);\n  }\n}\n\n' +
 									j
 										.map(function (n, e) {
 											return '' === a.state[n]
 												? ''
-												: '\n/* '
-														.concat(n, ' */\nli.voice-state[data-reactid*="')
-														.concat(a.state[n], '"] {\n  display: block;\n}\nli.voice-state[data-reactid*="')
-														.concat(a.state[n], '"] .user .name::before {\n  background-position: -')
-														.concat(90 * e, 'px 0;\n}\nli.voice-state[data-reactid*="')
-														.concat(a.state[n], '"] .avatar.speaking +  .user .name::before {\n  background-position: -')
-														.concat(90 * e, 'px -115px !important;\n}\n');
+												: '\n/* ' +
+														n +
+														' */\n' +
+														'li[class$="voice_state"][data-userid*="' +
+														a.state[n] +
+														'"] {\n  display: block;\n}\n' +
+														'li[class$="voice_state"][data-userid*="' +
+														a.state[n] +
+														'"] span[class*="name"]:before {\n  background-position: -' +
+														90 * e +
+														'px 0;\n}\n' +
+														'li[class$="voice_state"][data-userid*="' +
+														a.state[n] +
+														'"][class*="speaking"] span[class*="name"]:before {\n  background-position: -' +
+														90 * e +
+														'px -115px !important;\n}\n';
 										})
 										.reduce(function (n, e) {
 											return n + e;
