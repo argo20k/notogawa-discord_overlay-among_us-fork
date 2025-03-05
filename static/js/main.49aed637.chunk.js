@@ -32,7 +32,7 @@
 							}),
 							(a.genetate_css = function () {
 								return (
-									'/* Created by https://notogawa.github.io/discord-overlay-among_us/ */\nbody {\n  background-color: rgba(0, 0, 0, 0);\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  float: right;\n}\n\n' +
+									'/* Created by https://argo20k.github.io/notogawa-discord_overlay-among_us-fork/ */\nbody {\n  background-color: rgba(0, 0, 0, 0);\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  float: right;\n}\n\n' +
 									'ul[class$="voice_states"] {\n  margin: 0;\n  padding: 0;\n}\n\n' +
 									'li[class$="voice_state"] img[class$="avatar"] {\n  border: 0 !important;\n  height: 100px !important;\n  width: 100px !important;\n  border-radius: 0 !important;\n}\n\n' +
 									'li[class$="voice_state"] span[class*="name"] {\n  width: 100px !important;\n  position: relative;\n  overflow: visible;\n  top: -26px;\n  display: inline-block;\n}\n\n' +
